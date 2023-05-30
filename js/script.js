@@ -66,6 +66,10 @@ const btn = document.querySelector(".signup-btn");
 //   }
 // });
 
+localStorage.setItem("test", "fuhb");
+let val = localStorage.getItem("test");
+console.log(val);
+
 function clickSignupBtn() {
   let username = $(".username-field").val();
   let password = $(".password-field").val();
@@ -91,19 +95,18 @@ function clickSignupBtn() {
     again_password: again_password,
   };
 
-  window.location.href = "user.html";
-
   if (dir == 1) {
     // 注册
     $.ajax({
-      url: "queryProvinceServlet",
+      url: "http://localhost:8080/user/createUser",
       type: "post",
       data: login_info,
-      dataType: json,
+      dataType: "json",
       success: function (resp) {
         console.log(resp);
-        localStorage.setItem("Personal_info", resp);
-        // window.location.href = "user.html";
+        localStorage.setItem("user", resp.data);
+
+        window.location.href = "user.html";
       },
       error: function () {
         alert("请求错误");
@@ -112,15 +115,15 @@ function clickSignupBtn() {
   } else {
     // 登录
     $.ajax({
-      url: "queryProvinceServlet",
-      type: "get",
+      url: "http://localhost:8080/user/login",
+      type: "post",
       data: login_info,
-      dataType: json,
+      dataType: "json",
       success: function (resp) {
         console.log(resp);
-        localStorage.setItem("Personal_info", resp);
+        localStorage.setItem("user", resp.data);
 
-        // window.location.href = "user.html";
+        window.location.href = "user.html";
       },
       error: function () {
         alert("请求错误");

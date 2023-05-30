@@ -16,14 +16,22 @@ var typed = new Typed(".multiple-text", {
   loop: true,
 });
 
-let Personal_info = localStorage.getItem("Personal_info");
+let val = localStorage.getItem("test");
+console.log(val);
+
+let user = localStorage.getItem("user");
+console.log(user);
 
 // 头像
-var blob = new Blob([Personal_info.imageResourse], {
-  type: Personal_info.imageType,
-});
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "/my/image/name.png", true);
+xhr.responseType = "arraybuffer";
+
+var imageType = xhr.getResponseHeader("Content-Type");
+var blob = new Blob([xhr.response], { type: imageType });
 var imageUrl = (window.URL || window.webkitURL).createObjectURL(blob);
 $(".home-info img").attr("src", imageUrl);
 
 //个人信息
-$(".home-content h1").html("123");
+const username = document.querySelector(".home-content h1");
+username.innerHTML = user.username;
