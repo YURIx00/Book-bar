@@ -56,34 +56,28 @@ x
 - Spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
-
-* {
-  padding: 0;
+*,
+*::before,
+*::after {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-
-  color: #fff;
+  font-family: "Poppins", sans-serif;
 }
 
 html {
   /* 10px / 16px = 0.625 = 62.5% */
   font-size: 62.5%;
-
-  /* Does NOT work on Safari */
-  scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Rubik", sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  background-color: #333;
+body,
+input {
+  font-family: "Poppins", sans-serif;
 }
 
 /**************************/
 /* Common reusable components */
 /**************************/
-
 .container {
   /* 1140px */
   max-width: 120rem;
@@ -98,6 +92,10 @@ body {
 
   /* margin-bottom: 9.6rem; */
 }
+
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
 
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
@@ -115,14 +113,27 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.grid--5-cols {
+/* .grid--5-cols {
   grid-template-columns: repeat(5, 1fr);
-}
+} */
 
 .grid--center-v {
   align-items: center;
 }
 
-strong {
-  font-weight: 500;
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align {
+  align-items: center;
+}
+
+.justify {
+  justify-content: center;
 }

@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+/**************************/
+/* HEADER */
+/**************************/
+.header {
+  padding: 2rem 7rem 2rem 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-box {
+  padding: 1rem 2rem 1rem 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  max-width: 160rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+}
+
+.header-logo {
+  width: 20rem;
+  position: absolute;
+  left: 2rem;
+  cursor: pointer;
+}
+
+.header-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 12rem;
+  height: 6rem;
+  font-size: 1.8rem;
+  border-radius: 10px;
+  transition: all 0.3s 0.05s ease-in-out;
+  cursor: pointer;
+}
+
+.header-item:hover {
+  background-color: #67b4b0;
+  color: #fff;
+}
+
+.header-item-span {
+  margin-right: 0.7rem;
+}
+
+.header-person-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-person-info span {
+  color: #67b4b0;
+}
+
+.header-person-info img {
+  border-radius: 100%;
+}
+
+/**************************/
+/* EMPLOYEE */
+/**************************/
+.employee-section {
+  padding: 4rem 7rem 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.employee-title {
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.employee-box {
+  width: 100%;
+  height: 80rem;
+  border: solid 2px #000;
+  display: flex;
+  border-radius: 12px;
+}
+
+.catalogue-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.catalogue-search-bar p {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.catalogue {
+  height: 100%;
+  width: 25rem;
+  overscroll-behavior: contain;
+  border-right: solid 2px #000;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: scroll;
+  box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+.catalogue::-webkit-scrollbar {
+  width: 0;
+}
+
+.catalogue dl {
+  padding: 0;
+}
+
+.catalogue dt {
+  background: #67b4b0;
+  border-bottom: 1px solid #989ea4;
+  color: #fff;
+  font: bold 18px/21px Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 2px 0 0 12px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+}
+
+.catalogue dd {
+  font: bold 1.8rem/2rem Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 1rem 2rem 1rem 1.2rem;
+  white-space: nowrap;
+  transition: all 0.3s 0.05s ease-in-out;
+}
+
+.catalogue dd span {
+  display: inline-block;
+  color: #67b4b0;
+  opacity: 0;
+  transition: all 0.3s 0.1s ease-in-out;
+}
+
+.catalogue dd:hover {
+  transform: translateX(1rem);
+}
+
+.catalogue dd:hover span {
+  transform: translateX(1.5rem);
+  opacity: 1;
+}
+
+.catalogue dd + dd {
+  border-top: 1px solid #ccc;
+}
+
+.employee-info-box {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 4rem;
+}
+
+.employee-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.employee-name {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.employee-name input {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 0.7rem;
+  margin-left: 2rem;
+  border: none;
+  background-color: #dee2e6;
+  color: #000;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.employee-time {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.employee-time input {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 0.7rem;
+  margin-left: 2rem;
+  border: none;
+  background-color: #dee2e6;
+  color: #000;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.employee-time-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.employee-time-info input {
+  width: 10rem;
+}
+
+.employee-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.employee-btn button {
+  padding: 2rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  border: solid 2px #000;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.employee-btn button:hover {
+  background-color: #67b4b0;
+  color: #fff;
+}
+
+/**************************/
+/* EMPLOYEE */
+/**************************/
+.finance-section {
+  padding: 4rem 7rem 4rem 7rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.finance-title {
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.finance-box {
+  width: 100%;
+  height: 100rem;
+  display: flex;
+  flex-direction: column;
+  border: solid 2px #000;
+  border-radius: 12px;
+}
+
+.finance-catalogue {
+  padding: 1rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 2px #000;
+}
+
+.finance-catalogue span {
+  font-size: 2.4rem;
+  font-weight: bold;
+  background-color: #dee2e6;
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 10px;
+  transition: all 0.3s 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.finance-catalogue span:hover {
+  background-color: #67b4b0;
+  color: #fff;
+}
+
+.finance-time {
+  width: 100%;
+  padding: 1rem 3rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  border-bottom: solid 2px #000;
+}
+
+.finance-time input {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 0.7rem;
+  margin-left: 2rem;
+  border: none;
+  background-color: #dee2e6;
+  color: #000;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}
+
+.finance-items {
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: left;
+  gap: 3rem;
+}
+
+.finance-item {
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  border: solid 2px #000;
+}
+
+.finance-item span {
+  padding: 1rem 1rem;
+  border-right: solid 2px #000;
+  text-align: center;
+}
+
+#finance-item-last {
+  border-right: none;
+}
+
+.finance-total {
+  padding: 1rem 3rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  border-top: solid 2px #000;
+}
+
+.finance-total input {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 0.7rem;
+  margin-left: 2rem;
+  border: none;
+  background-color: #dee2e6;
+  color: #000;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+}

@@ -18,45 +18,348 @@
     />
 
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="stylesheet" href="css/index.css" />
 
-    <script defer src="js/script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
-    <title>敬信书吧</title>
+    <title>鹿鸣书吧</title>
   </head>
   <body>
     <header class="header">
-      <a href="#">
-        <img class="logo" alt="敬信书吧图标" src="img/logo.png" />
-      </a>
-    </header>
-
-    <main>
-      <div class="block"></div>
-      <section class="section-hero">
-        <div class="hero">
-          <div class="hero-text-box">
-            <h1 class="heading-primary">燃一柱书香</h1>
-            <p class="hero-poem">人，诗意地栖居</p>
-            <p class="hero-poem">智慧在此隐藏</p>
-            <p class="hero-poem">悦读并延申悦读</p>
-            <p class="hero-poem">回归读书之美</p>
-            <p class="hero-poem">透过时光，感受理想的力量</p>
-            <p class="hero-poem">浪漫者的痛苦与乐土</p>
-            <p class="hero-poem">读书人的香格里拉</p>
-          </div>
-          <div class="hero-img-box">
-            <img
-              src="img/hero-book.png"
-              class="hero-img"
-              alt="一个宁静的桌子"
-            />
+      <div class="header-box">
+        <img src="img\icon\logo2.png" class="header-logo" />
+        <div class="header-item header-item-icon">
+          <span class="span-icon">为什么阅读</span>
+          <ion-icon name="chevron-down-outline" class="header-icon-dowm"></ion-icon>
+          <div class="header-ul">
+            <p>1.阅读使我们身心愉悦</p>
+            <p>2.阅读让我们美好生活</p>
+            <p>3.阅读能与作家的思想碰撞</p>
           </div>
         </div>
-      </section>
-    </main>
+        <div class="header-item header-item-icon">
+          <span class="span-icon">相关</span>
+          <ion-icon name="chevron-down-outline"
+          class="header-icon-dowm"></ion-icon>
+          <div class="header-ul" style="width: 16rem;">
+            <p>吉林大学</p>
+            <p>软件学院</p>
+            <p>网页与网站设计</p>
+          </div>
+        </div>
+        <div class="header-item">
+          <span>加入我们</span>
+        </div>
+        <div class="header-item">
+          <span>List Your Property</span>
+        </div>
+        <button class="header-btn" href="#">立即登录</button>
+      </div>
+    </header>
 
-    <footer class="footer"></footer>
+    <section class="section-hero">
+      <div class="hero-box">
+        <div class="hero-info">
+          <h2 class="hero-title">Live without leases</h2>
+          <p class="hero-subtitle">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sed
+            voluptas vitae, harum reiciendis tenetur sapiente nemo molestiae
+          </p>
+          <div class="hero-options">
+            <div class="option-item option-item-1">
+              <p class="option-item-question">Location</p>
+              <p class="option-item-answer">Where in?</p>
+            </div>
+            <div class="option-item option-item-2">
+              <p class="option-item-question">Move in</p>
+              <p class="option-item-answer">When?</p>
+            </div>
+            <div class="option-item option-item-3">
+              <p class="option-item-question">Move out</p>
+              <p class="option-item-answer">How?</p>
+            </div>
+            <button class="option-btn">Find my landing</button>
+          </div>
+        </div>
+        <img class="hero-img" src="img\img\reading wuman.jpg" />
+      </div>
+    </section>
+
+    <section class="section-introduce">
+      <div class="introduce-box">
+        <p class="introduce-title">
+          A membership that opens doors in 375+ cities
+        </p>
+        <div class="introduce-contact">
+          <p class="introduce-contact-1">View member perks</p>
+          <span class="introduce-contact-2">-></span>
+        </div>
+        <div class="introduce-item-box">
+          <div class="introduce-item">
+            <img src="img\svg\location.svg" class="introduce-item-img"></img>
+            <p class="introduce-item-title">Let go of renting restrictions</p>
+            <p class="introduce-item-subtitle">
+              Stay for a month, or live with us for years. You can transfer homes
+              throughout the Landing network with just 2 weeks notice.
+            </p>
+          </div>
+          <div class="introduce-item">
+            <img src="img\svg\fatherhood.svg" class="introduce-item-img"></img>
+            <p class="introduce-item-title">Feel at home anywhere</p>
+            <p class="introduce-item-subtitle">
+              Each home comes with everything you need to quickly settle in. Come
+              home to a space that leaves no detail overlooked.
+            </p>
+          </div>
+          <div class="introduce-item">
+            <img src="img\svg\fell at home.svg" class="introduce-item-img introduce-item-imgx"></img>
+            <p class="introduce-item-title">Fast, easy, all online</p>
+            <p class="introduce-item-subtitle">Our easy online booking process means you can have your next home in minutes, without nightmarish paperwork.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dessert">
+      <div class="dessert-box">
+        <img src="img\svg\eating.png" class="dessert-img">
+        <div class="dessert-info">
+          <p class="dessert-introduce">
+            Introduce <em>delicious dessert</em>
+          </p>
+          <p class="dessert-title">Flexible living, now for just $1495/mo</p>
+          <p class="dessert-subtitle">Get access to available furnished homes across the country.
+            When your home gets booked - or you want to try something new - pick a new property, neighborhood or city in our app. Limited memberships available for $1495/mo.</p>
+            <button href="#" class="dessert-btn">Learn more-></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-difference">
+      <div class="difference-box">
+        <p class="difference-title">Living on Standby</p>
+        <div class="difference-body">
+          <div class="difference-info">
+            <div class="difference-options">
+              <span class="difference-option">Getting started</span>
+              <span class="difference-option">Living</span>
+              <span class="difference-option">Membership</span>
+            </div>
+            <div class="difference-contents">
+              <div class="difference-content">
+                <h2 class="difference-content-title">Choosing a home</h2>
+                <p class="difference-content-p">Standby is available today in all 375+ Landing cities except for those in New York and California. Use the search above to see all of our options wherever you want to go next!</p>
+              </div>
+              <div class="difference-content">
+                <h2 class="difference-content-title">Getting bumped</h2>
+                <p class="difference-content-p">When a standard member books your home at the normal rate, we will notify you to select a new home in our app. You’ll have a minimum of three days’ notice to pick your new home. We cover the cleaning fee if we ask you to move.</p>
+              </div>
+              <div class="difference-content">
+                <h2 class="difference-content-title">Choosing a home</h2>
+                <p class="difference-content-p">Whenever you want to switch homes, you can choose from our available inventory in our app at the same three days' notice. We just ask that you pay $150 to get your current home cleaned for the next member.</p>
+              </div>
+            </div>
+          </div>
+          <img src="img\img\black man reading.jpg" alt="black man reading" class="difference-img">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-login">
+      <div class="login-box">
+          <div class="login-front">
+            <img src="img\svg\Reading Time.svg" class="login-img">
+          </div>
+          <div class="login-back">
+            <img src="img\icon\logo2.png" alt="鹿鸣书吧图标" class="login-logo">
+            <h2 class="login-title">注册</h2>
+            <div class="login-subtitle">
+              <p>已经创建了账号? </p> 
+              <span> 登录</span>
+            </div>
+            <div class="input-wrap">
+              <input type="text" minlength="4" autocomplete="off" class="input-field username-field">
+              <label class="input-label">用户名</label>
+            </div>
+            <div class="input-wrap">
+              <input type="password" autocomplete="off" class="input-field password-field">
+              <label class="input-label">密码</label>
+            </div>
+            <div class="input-wrap again_password">
+              <input type="password" autocomplete="off" class="input-field again-password-field">
+              <label class="input-label">重复密码</label>
+            </div>
+            <input type="submit" value="确认" class="signup-btn">
+            <p class="signup-text">注册前，我已经阅读同意
+            <a href="#">服务条款</a>
+            <a href="#">隐私协议</a>
+          </p>
+          </div>
+      </div>
+    </section>
+
+    <section class="section-vip">
+      <div class="vip-box">
+        <div class="vip-card">
+          <img src="img\svg\vip1.svg" class="vip-img">
+          <div class="vip-info">
+            <p class="vip-title">普通用户</p>
+            <p class="price">$<strong>0</strong></p>
+            <div class="vip-info-item">
+              <ion-icon name="close-outline"></ion-icon>
+              <p>1 meal per day</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="close-outline"></ion-icon>
+              <p>Order from 11am to 9pm</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="close-outline"></ion-icon>
+              <p>Delivery is free</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="close-outline"></ion-icon>
+              <p>no access to latest recipes</p>
+            </div>
+            <div class="xxxxx"><button href="#" class="vip-btn">正在使用</button></div>
+          </div>
+        </div>
+        <div class="vip-card">
+          <img src="img\svg\vip2.svg" class="vip-img">
+          <div class="vip-info">
+            <p class="vip-title">白金用户</p>
+            <p class="price">$<strong>399</strong></p>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>1 meal per day</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>Order from 11am to 9pm</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>Delivery is free</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="close-outline"></ion-icon>
+              <p>no access to latest recipes</p>
+            </div>
+            <div class="xxxxx"><button href="#" class="vip-btn">立即购买</button></div>
+          </div>
+        </div>
+        <div class="vip-card">
+          <img src="img\svg\vip3.svg" class="vip-img">
+          <div class="vip-info">
+            <p class="vip-title">钻石用户</p>
+            <p class="price">$<strong>699</strong></p>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>1 meal per day</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>Order from 11am to 9pm</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>Delivery is free</p>
+            </div>
+            <div class="vip-info-item">
+              <ion-icon name="checkmark-outline"></ion-icon>
+              <p>no access to latest recipes</p>
+            </div>
+            <div class="xxxxx"><button href="#" class="vip-btn">立即购买</button></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img class="logo" alt="logo" src="img\icon\logo2.png" />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+
+          <p class="copyright">
+            Copyright &copy; <span class="year">2027</span> by HongBo Fu, Zhenkui Zhang, DeYu Kong Inc.
+            All rights reserved.
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <address class="contacts">
+            <p class="address">
+              JiLin university, Vanguard campus, Software engineer, 55210626
+            </p>
+            <p>
+              <a class="footer-link" href="tel:415-201-6370">+85 13377153573</a
+              ><br />
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >1311902951@qq.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Account</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Create account</a></li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">iOS app</a></li>
+            <li><a class="footer-link" href="#">Android app</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">JiLin university</a></li>
+            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Reading partners</a></li>
+            <li><a class="footer-link" href="#">Careers</a></li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading">Resources</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Reading Library </a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
+            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   </body>
+  <script src="js/jquery-3.7.0.js"></script>
+    <script src="js/script.js"></script>
 </html>
