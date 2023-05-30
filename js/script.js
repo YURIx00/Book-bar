@@ -81,7 +81,7 @@ function clickSignupBtn() {
     return;
   }
 
-  if (password !== again_password) {
+  if (password !== again_password && dir == 1) {
     alert("重复密码不同");
     return;
   }
@@ -103,7 +103,7 @@ function clickSignupBtn() {
       success: function (resp) {
         console.log(resp);
         localStorage.setItem("Personal_info", resp);
-        window.location.href = "user.html";
+        // window.location.href = "user.html";
       },
       error: function () {
         alert("请求错误");
@@ -120,7 +120,7 @@ function clickSignupBtn() {
         console.log(resp);
         localStorage.setItem("Personal_info", resp);
 
-        window.location.href = "user.html";
+        // window.location.href = "user.html";
       },
       error: function () {
         alert("请求错误");

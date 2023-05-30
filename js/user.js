@@ -18,8 +18,12 @@ var typed = new Typed(".multiple-text", {
 
 let Personal_info = localStorage.getItem("Personal_info");
 
+// 头像
 var blob = new Blob([Personal_info.imageResourse], {
   type: Personal_info.imageType,
 });
 var imageUrl = (window.URL || window.webkitURL).createObjectURL(blob);
 $(".home-info img").attr("src", imageUrl);
+
+//个人信息
+$(".home-content h1").html("123");
