@@ -16,7 +16,6 @@ var swiper = new Swiper(".swiper-container", {
 $.ajax({
   url: "http://localhost:8080/admin/getAllBook",
   type: "get",
-  data: ajaxData,
   dataType: "json",
   success: function (resp) {
     console.log(resp);

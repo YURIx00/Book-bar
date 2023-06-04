@@ -86,15 +86,6 @@ login_inputs.forEach((inp) => {
 
 const btn = document.querySelector(".signup-btn");
 
-// $.ajax({
-//   type: "get",        // 请求方式
-//   url: "js/data.txt", // 请求路径
-//   dataType: "json",   // 预期返回一个 json 类型数据
-//   success: function (data) {   // data是形参名
-//       console.log(data);
-//   }
-// });
-
 localStorage.setItem("uid", "-1");
 let val = localStorage.getItem("uid");
 console.log(val);
@@ -117,6 +108,7 @@ function clickSignupBtn() {
     alert("重复密码不同");
     return;
   }
+
   var login_info = {
     username: username,
     password: password,

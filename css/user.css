@@ -144,16 +144,6 @@ body {
   animation-delay: 2s;
 }
 
-.btn:hover {
-  box-shadow: 0 0 20px #b7b2a9;
-}
-
-.btn:active {
-  background: none;
-  color: #b7b2a9;
-  border: 2px solid #b7b2a9;
-}
-
 .home-info {
   display: flex;
   flex-direction: column;
@@ -265,7 +255,7 @@ body {
   overscroll-behavior: contain;
   background-color: #fff;
   border-radius: 12px;
-  overflow: scroll;
+  overflow-y: scroll;
   box-shadow: 0 0 0.7rem 0.5rem rgba(0, 0, 0, 0.15);
   position: relative;
 }
@@ -348,7 +338,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  overflow: scroll;
+  overflow-y: scroll;
   padding: 3rem;
   min-height: 60rem;
 }
@@ -524,7 +514,7 @@ body {
   height: 80rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .book-item-box::-webkit-scrollbar {

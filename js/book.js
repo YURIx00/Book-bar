@@ -1,18 +1,17 @@
-let bookId = -1;
-let send = {
-  bookName: bookName,
-};
 $.ajax({
   url: "http://localhost:8080/admin/getBooksByName",
   type: "get",
-  data: send,
+  data: {
+    bookName: bookName,
+  },
   dataType: "json",
   success: function (resp) {
     console.log(resp);
     let bookInfo = resp.data;
-    bookId = bookInfo.bookId;
 
-    let newBookInfo = `<div class="browsing-box">
+    let newBookInfo = document.createElement("div");
+    newBookInfo.classList.add("browsing-box");
+    newBookInfo.innerHTML = `
     <img
       src="${bookInfo.imagePath}"
       alt=""
@@ -39,8 +38,7 @@ $.ajax({
       <div class="book-intro-content">
         ${bookInfo.briefIntroduction}
       </div>
-    </div>
-  </div>`;
+    </div>`;
 
     const browsing_section = document.querySelector(".browsing-section");
     browsing_section.appendChild(newBookInfo);
@@ -49,10 +47,6 @@ $.ajax({
     alert("请求错误");
   },
 });
-
-let sendComment = {
-  bookId: bookId,
-};
 
 $.ajax({
   url: "http://localhost:8080/comment/getByBookid",
