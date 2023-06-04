@@ -350,7 +350,7 @@ body {
   gap: 2rem;
   overflow: scroll;
   padding: 3rem;
-  min-height: 40rem;
+  min-height: 60rem;
 }
 
 .dessert-info::-webkit-scrollbar {
@@ -381,8 +381,20 @@ body {
 }
 
 .dessert-price {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
   font-weight: bold;
+}
+
+.dessert-price strong {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: red;
+}
+
+.dessert-price span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: line-through;
 }
 
 .dessert-sale-amout {
@@ -509,7 +521,7 @@ body {
 .book-item-box {
   max-width: 160rem;
   width: 100%;
-  max-height: 80rem;
+  height: 80rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   overflow: scroll;
@@ -520,6 +532,7 @@ body {
 }
 
 .book-item {
+  height: 28rem;
   box-shadow: 0 0 1rem 0.7rem rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   width: 20rem;
@@ -552,7 +565,7 @@ body {
   width: 4rem;
   height: 4rem;
   border-radius: 100%;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 
 .author-name {

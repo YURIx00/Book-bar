@@ -8,75 +8,39 @@ body {
 /* HEADER */
 /**************************/
 .header {
-  padding: 2rem 7rem 2rem 7rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-box {
-  padding: 1rem;
-  font-size: 1.8rem;
-  font-weight: 700;
-  max-width: 160rem;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
+  padding: 2rem 10%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: right;
-  gap: 2rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: -1rem;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  font-weight: bold;
 }
 
-.header-logo {
-  width: 20rem;
-  position: absolute;
-  left: 2rem;
-  cursor: pointer;
-}
-
-.header-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  width: 12rem;
-  height: 6rem;
-  font-size: 1.8rem;
-  border-radius: 10px;
-  transition: all 0.3s 0.05s ease-in-out;
-  cursor: pointer;
-}
-
-.header-item:hover {
-  background-color: #67b4b0;
+.logo {
+  font-size: 25px;
   color: #fff;
-}
-
-.header-item-span {
-  margin-right: 0.7rem;
-}
-
-.header-btn {
-  font-size: 1.8rem;
+  text-decoration: none;
   font-weight: 600;
-  padding: 1.8rem 3rem 1.8rem 3rem;
-  text-align: center;
-  background-color: #e9ecef;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s 0.1s ease-in-out;
+  cursor: default;
 }
 
-.header-btn:hover {
-  background-color: #67b4b0;
+.navbar a {
+  display: inline-block;
+  font-size: 18px;
   color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #67b4b0;
 }
 
 /**************************/
@@ -92,24 +56,99 @@ body {
   padding: 2rem;
   border-radius: 12px;
   background-color: #fff;
-  box-shadow: 0 0 0.5rem 0.7rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0.7rem 0.5rem rgba(0, 0, 0, 0.15);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
 .book-img {
   max-width: 40rem;
-  grid-column-start: 1;
-  grid-column-end: 2;
   border-radius: 10px;
   box-shadow: 0 0 0.5rem 0.7rem rgba(0, 0, 0, 0.1);
+}
+
+.book-info h2 {
+  font-size: 3.6rem;
+  margin-top: 3rem;
+}
+
+.book-info h1 {
+  font-size: 2.4rem;
+}
+
+.author-box {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.author-box img {
+  border-radius: 50%;
+}
+
+.author-box h1 {
+  color: #67b4b0;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-info p {
+  padding: 0.4rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.book-top {
+  margin-top: 5rem;
+}
+
+.btns {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 3rem;
+}
+
+.btns input {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.book-intro {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+  gap: 3rem;
+}
+
+.book-intro-title {
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.book-intro-content {
+  padding: 2rem;
+  font-size: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 0.7rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 /**************************/
 /* COMMENT */
 /**************************/
 .comment-section {
-  padding: 4.8rem 9rem 4.8rem 9rem;
+  padding: 3rem 9rem 4.8rem 9rem;
 }
 
 .commect-title {

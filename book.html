@@ -30,28 +30,53 @@
   </head>
   <body>
     <header class="header">
-      <div class="header-box">
-        <img src="img\icon\logo2.png" class="header-logo" />
-        <div class="header-item header-item-icon">
-          <span class="header-item-span">首页</span>
-        </div>
-        <div class="header-item header-item-icon">
-          <span class="header-item-span">每日推荐</span>
-        </div>
-        <div class="header-item">
-          <span class="header-item-span">图书浏览</span>
-        </div>
-        <div class="header-item">
-          <span class="header-item-span">评论区</span>
-        </div>
-        <button class="header-btn" href="#">登录</button>
-      </div>
+      <a href="#" class="logo">鹿鸣书吧</a>
+
+      <nav class="navbar">
+        <a href="#" class="active item" style="--i: 1">个人主页</a>
+        <a href="#" class="item toReading" style="--i: 2">图书阅览</a>
+        <a href="#" class="item toDessert" style="--i: 3">茶室小点</a>
+        <a href="#" class="item toBookShelf" style="--i: 4">个人书架</a>
+        <a href="#" class="item toVip" style="--i: 5">会员中心</a>
+      </nav>
     </header>
 
     <main>
       <section class="browsing-section">
         <div class="browsing-box">
-          <img src="img\svg\Reading Time.svg" alt="" class="book-img" />
+          <img
+            src="img\img\jeffery-erhunse-5eQ-_Gebljg-unsplash.jpg"
+            alt=""
+            class="book-img"
+          />
+          <div class="book-info">
+            <h2><strong>10X Visium</strong> · 玄幻</h2>
+            <div class="author-box">
+              <img src="img\img\default_profile.webp" />
+              <h1>author-name</h1>
+            </div>
+            <p class="book-top">实体书库存：5本</p>
+            <p>图书位置：sadiadhuwiuadawdakjd</p>
+            <p>销售价：65元</p>
+            <p>电子书：<strong>有</strong></p>
+            <p>电子书价格：2元</p>
+            <div class="btns">
+              <input type="button" value="购买实体书" />
+              <input type="button" value="购买电子书" />
+            </div>
+          </div>
+          <div class="book-intro">
+            <div class="book-intro-title">图书简介</div>
+            <div class="book-intro-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+              dolores, assumenda facere voluptas voluptatibus similique, sint
+              reprehenderit dicta omnis eos nihil sed eum facilis quo! Eos et
+              nobis veritatis repudiandae!Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Explicabo dolores, assumenda facere voluptas
+              voluptatibus similique, sint reprehenderit dicta omnis eos nihil
+              sed eum facilis quo! Eos et nobis veritatis repudiandae!
+            </div>
+          </div>
         </div>
       </section>
 

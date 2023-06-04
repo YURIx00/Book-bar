@@ -39,10 +39,10 @@
 
       <nav class="navbar">
         <a href="#" class="active item" style="--i: 1">个人主页</a>
-        <a href="#" class="item" style="--i: 2">图书阅览</a>
-        <a href="#" class="item" style="--i: 3">茶室小点</a>
-        <a href="#" class="item" style="--i: 4">会员中心</a>
-        <a href="#" class="item" style="--i: 5">Contact</a>
+        <a href="#" class="item toReading" style="--i: 2">图书阅览</a>
+        <a href="#" class="item toDessert" style="--i: 3">茶室小点</a>
+        <a href="#" class="item toBookShelf" style="--i: 4">个人书架</a>
+        <a href="#" class="item toVip" style="--i: 5">会员中心</a>
       </nav>
     </header>
 
@@ -79,7 +79,7 @@
       <div class="dessert-contaner">
         <div class="catalogue">
           <h2 class="catalogue-title">-菜单-</h2>
-          <dl>
+          <dl class="dl1">
             <dt>A</dt>
             <dd>Andreasdas. <span>></span></dd>
             <dd>Andrewaasd <span>></span></dd>
@@ -94,7 +94,7 @@
             <dd>Andrebnmbn <span>></span></dd>
             <dd>Anrtyrtfb <span>></span></dd>
           </dl>
-          <dl>
+          <dl class="dl2">
             <dt>C</dt>
             <dd>Cdfssfhsf <span>></span></dd>
             <dd>Chvsdsfo <span>></span></dd>
@@ -110,7 +110,7 @@
             <dd>Cd2zcxmcm <span>></span></dd>
             <dd>C2ccamlb9 <span>></span></dd>
           </dl>
-          <dl>
+          <dl class="dl3">
             <dt>E</dt>
             <dd>Tadv8iev <span>></span></dd>
             <dd>Tvz8uvoi <span>></span></dd>
@@ -128,23 +128,19 @@
             <div class="dessert-item">
               <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
-              <ion-icon name="add-circle-outline"></ion-icon>
-            </div>
-            <div class="dessert-item">
-              <img src="img\img\dessert1.jpg" alt="" />
-              <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
-                <div class="dessert-sale-amout">月售4536份</div>
-              </div>
-              <ion-icon name="add-circle-outline"></ion-icon>
+              <ion-icon name="add-circle-outline" val="12"></ion-icon>
             </div>
             <div class="dessert-item">
               <img src="img\img\dessert2.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
@@ -152,7 +148,9 @@
             <div class="dessert-item">
               <img src="img\img\dessert3.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
@@ -160,7 +158,9 @@
             <div class="dessert-item">
               <img src="img\img\dessert4.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
@@ -168,63 +168,89 @@
             <div class="dessert-item">
               <img src="img\img\dessert5.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert6.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert7.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert8.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert9.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert10.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert11.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
             </div>
             <div class="dessert-item">
-              <img src="img\img\dessert12.jpg" alt="" />
+              <img src="img\img\dessert1.jpg" alt="" />
               <div class="dessert-xxx">
-                <p class="dessert-price">现价：12元</p>
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
+                <div class="dessert-sale-amout">月售4536份</div>
+              </div>
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </div>
+            <div class="dessert-item">
+              <img src="img\img\dessert1.jpg" alt="" />
+              <div class="dessert-xxx">
+                <p class="dessert-price">
+                  现价：<strong>12元</strong><span>20元</span>
+                </p>
                 <div class="dessert-sale-amout">月售4536份</div>
               </div>
               <ion-icon name="add-circle-outline"></ion-icon>
@@ -235,7 +261,7 @@
               <div class="asd">
                 <ion-icon name="bag-add-outline"></ion-icon>
                 <div class="shopping-info">
-                  <h2>0￥</h2>
+                  <h2 val="0">0￥</h2>
                   <p>另需配送费￥1</p>
                 </div>
               </div>
@@ -257,8 +283,7 @@
             <div class="author-box">
               <img src="img\img\default_profile.webp" />
               <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
+              <p>10.3万字</p>
             </div>
           </div>
           <div class="book-item">
@@ -266,8 +291,7 @@
             <div class="author-box">
               <img src="img\img\default_profile.webp" />
               <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
+              <p>10.3万字</p>
             </div>
           </div>
           <div class="book-item">
@@ -275,134 +299,7 @@
             <div class="author-box">
               <img src="img\img\default_profile.webp" />
               <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
-            </div>
-          </div>
-          <div class="book-item">
-            <img src="img\img\reading wuman.jpg" />
-            <div class="author-box">
-              <img src="img\img\default_profile.webp" />
-              <p class="author-name">10X Visium</p>
-              <span>-10.3</span>
-              <p>万字</p>
+              <p>10.3万字</p>
             </div>
           </div>
         </div>

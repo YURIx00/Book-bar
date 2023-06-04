@@ -40,15 +40,6 @@
         <div class="header-item header-item-icon">
           <span class="header-item-span">首页</span>
         </div>
-        <div class="header-item header-item-icon">
-          <span class="header-item-span">每日推荐</span>
-        </div>
-        <div class="header-item">
-          <span class="header-item-span">图书浏览</span>
-        </div>
-        <div class="header-item">
-          <span class="header-item-span">评论区</span>
-        </div>
         <div class="header-person-info">
           <p>欢迎回来，<span>某某某</span></p>
           <img src="img\img\default_profile.webp" alt="" />
@@ -64,7 +55,7 @@
             <p class="">搜索：</p>
             <input type="search" class="search-container" />
           </div>
-          <dl>
+          <dl class="dl1">
             <dt>A</dt>
             <dd>Andreasdas. <span>></span></dd>
             <dd>Andrewaasd <span>></span></dd>
@@ -79,7 +70,7 @@
             <dd>Andrebnmbn <span>></span></dd>
             <dd>Anrtyrtfb <span>></span></dd>
           </dl>
-          <dl>
+          <dl class="dl2">
             <dt>C</dt>
             <dd>Cdfssfhsf <span>></span></dd>
             <dd>Chvsdsfo <span>></span></dd>
@@ -95,7 +86,7 @@
             <dd>Cd2zcxmcm <span>></span></dd>
             <dd>C2ccamlb9 <span>></span></dd>
           </dl>
-          <dl>
+          <dl class="dl3">
             <dt>E</dt>
             <dd>Tadv8iev <span>></span></dd>
             <dd>Tvz8uvoi <span>></span></dd>
@@ -110,24 +101,24 @@
         <div class="employee-info-box">
           <img src="img\img\black man reading.jpg" class="employee-img" />
           <div class="employee-name">
-            <p>姓名：<input type="text" value="某某某"></input></p>
-            <p>岗位：<input type="text" value="前台管理员"></input></p>
-            <p>薪水：<input type="text" value="5000元每月"></input></p>
-            <p>年龄：<input type="text" value="25岁"></input></p>
-            <p>工作时间：<input type="text" value="上午9：00至下午6点"></input></p>
-            <p>入岗时间：<input type="text" value="2023年5月30日"></input></p>
+            <p>姓名：<input type="text" value="某某某" class="adminName"></input></p>
+            <p>岗位：<input type="text" value="前台管理员" class="adminJob"></input></p>
+            <p>薪水：<input type="text" value="5000元每月" class="adminSalary"></input></p>
+            <p>年龄：<input type="text" value="25岁" class="adminAge"></input></p>
+            <p>工作时间：<input type="text" value="上午9：00至下午6点" class="adminWorkTime"></input></p>
+            <p>入岗时间：<input type="text" value="2023-05-30" class="adminStartTime"></input></p>
           </div>
           <div class="employee-time">
-            <p>考勤时间：<input type="datetime" value="2023年5月30日" >至<input type="datetime" value="2023年6月1日"></p>
+            <p>考勤时间：<input type="datetime" value="2023-05-30" class="startTime">至<input type="datetime" value="2023-06-01" class="endTime"><button type="submit">查询</button></p>
 
             <div class="employee-time-info">
-              <p>出勤：<input type="number" value="10" style="text-align: center">次</p>
-              <p>缺勤：<input type="number" value="3" style="text-align: center">次</p>
-              <p>请假：<input type="number" value="2" style="text-align: center">次</p>
+              <p>出勤：<input type="number" value="10" style="text-align: center" class="attendance">次</p>
+              <p>缺勤：<input type="number" value="3" style="text-align: center" class="absenteeism">次</p>
+              <p>请假：<input type="number" value="2" style="text-align: center" class="vacate">次</p>
             </div>
 
             <div class="employee-btn">
-              <button>保存修改</button>
+              <button class="changeBtn">保存修改</button>
             </div>
           </div>
         </div>
@@ -138,57 +129,23 @@
       <p class="finance-title">财务情况：</p>
       <div class="finance-box">
         <div class="finance-catalogue">
-          <span>全部</span>
-          <span>员工工资收支情况</span>
-          <span>图书销售情况</span>
-          <span>VIP会员收入</span>
-          <span>线下茶点销售情况</span>
+          <span class="getAllFinanceBtn">全部</span>
+          <span class="getAdminFinanceBtn">员工工资收支情况</span>
+          <span class="getBookFinanceBtn">图书销售情况</span>
+          <span class="getVipFinanceBtn">VIP会员收入</span>
+          <span class="getDessertFinanceBtn">线下茶点销售情况</span>
         </div>
         <div class="finance-time">
           <p>时间选择：</p>
-          <input type="datetime">
+          <input type="datetime" class="financeStartTime">
           <p>至</p>
-          <input type="datetime">
+          <input type="datetime" class="financeEndTime">
           <p>之内</p>
         </div>
         <div class="finance-items">
           <div class="finance-item">
-              <span>员工工资</span>
-              <span>时间：2023年4月7日</span>
-              <span>员工：某某某</span>
-              <span>月薪：5000元</span>
-              <span>奖金：2543元</span>
-              <span>罚款：760元</span>
-              <span id="finance-item-last">薪水支出：5000元</span>
-          </div>
-          <div class="finance-item">
-            <span>图书销售</span>
-            <span>时间：2023年4月7日</span>
-            <span>用户：某某某</span>
-            <span>书名：某某</span>
-            <span>类别：电子书</span>
-            <span>数量：3份</span>
-            <span id="finance-item-last">销售收入：25元</span>
-          </div>
-          <div class="finance-item">
-            <span>VIP销售</span>
-            <span>时间：2023年4月7日</span>
-            <span>用户：某某某</span>
-            <span>类别：白金会员</span>
-            <span>数量：3个月</span>
-            <span id="finance-item-last">销售收入：700元</span>
-          </div>
-          <div class="finance-item">
-            <span>线下茶点销售</span>
-            <span>时间：2023年4月7日</span>
-            <span>用户：某某某</span>
-            <span>类别：珍珠奶茶</span>
-            <span>数量：2份</span>
-            <span id="finance-item-last">销售收入：700元</span>
-          </div>
-          <div class="finance-item">
             <span>员工工资</span>
-            <span>时间：2023年4月7日</span>
+            <span>时间：2023-04-07</span>
             <span>员工：某某某</span>
             <span>月薪：5000元</span>
             <span>奖金：2543元</span>
@@ -197,7 +154,7 @@
         </div>
         <div class="finance-item">
           <span>图书销售</span>
-          <span>时间：2023年4月7日</span>
+          <span>时间：2023-04-07</span>
           <span>用户：某某某</span>
           <span>书名：某某</span>
           <span>类别：电子书</span>
@@ -206,7 +163,7 @@
         </div>
         <div class="finance-item">
           <span>VIP销售</span>
-          <span>时间：2023年4月7日</span>
+          <span>时间：2023-04-07</span>
           <span>用户：某某某</span>
           <span>类别：白金会员</span>
           <span>数量：3个月</span>
@@ -214,7 +171,7 @@
         </div>
         <div class="finance-item">
           <span>线下茶点销售</span>
-          <span>时间：2023年4月7日</span>
+          <span>时间：2023-04-07</span>
           <span>用户：某某某</span>
           <span>类别：珍珠奶茶</span>
           <span>数量：2份</span>
@@ -222,7 +179,7 @@
         </div>
         <div class="finance-item">
           <span>员工工资</span>
-          <span>时间：2023年4月7日</span>
+          <span>时间：2023-04-07</span>
           <span>员工：某某某</span>
           <span>月薪：5000元</span>
           <span>奖金：2543元</span>
@@ -231,7 +188,7 @@
       </div>
       <div class="finance-item">
         <span>图书销售</span>
-        <span>时间：2023年4月7日</span>
+        <span>时间：2023-04-07</span>
         <span>用户：某某某</span>
         <span>书名：某某</span>
         <span>类别：电子书</span>
@@ -240,7 +197,7 @@
       </div>
       <div class="finance-item">
         <span>VIP销售</span>
-        <span>时间：2023年4月7日</span>
+        <span>时间：2023-04-07</span>
         <span>用户：某某某</span>
         <span>类别：白金会员</span>
         <span>数量：3个月</span>
@@ -248,12 +205,46 @@
       </div>
       <div class="finance-item">
         <span>线下茶点销售</span>
-        <span>时间：2023年4月7日</span>
+        <span>时间：2023-04-07</span>
         <span>用户：某某某</span>
         <span>类别：珍珠奶茶</span>
         <span>数量：2份</span>
         <span id="finance-item-last">销售收入：700元</span>
       </div>
+      <div class="finance-item">
+        <span>员工工资</span>
+        <span>时间：2023-04-07</span>
+        <span>员工：某某某</span>
+        <span>月薪：5000元</span>
+        <span>奖金：2543元</span>
+        <span>罚款：760元</span>
+        <span id="finance-item-last">薪水支出：5000元</span>
+    </div>
+    <div class="finance-item">
+      <span>图书销售</span>
+      <span>时间：2023-04-07</span>
+      <span>用户：某某某</span>
+      <span>书名：某某</span>
+      <span>类别：电子书</span>
+      <span>数量：3份</span>
+      <span id="finance-item-last">销售收入：25元</span>
+    </div>
+    <div class="finance-item">
+      <span>VIP销售</span>
+      <span>时间：2023-04-07</span>
+      <span>用户：某某某</span>
+      <span>类别：白金会员</span>
+      <span>数量：3个月</span>
+      <span id="finance-item-last">销售收入：700元</span>
+    </div>
+    <div class="finance-item">
+      <span>线下茶点销售</span>
+      <span>时间：2023-04-07</span>
+      <span>用户：某某某</span>
+      <span>类别：珍珠奶茶</span>
+      <span>数量：2份</span>
+      <span id="finance-item-last">销售收入：700元</span>
+    </div>
         </div>
         <div class="finance-total">
           <p>总收入：</p>

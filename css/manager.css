@@ -221,6 +221,19 @@
   margin: 1rem;
 }
 
+.employee-time button {
+  font-size: 2.4rem;
+  font-weight: bold;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  margin-left: 1rem;
+}
+
+.employee-time button:hover {
+  color: #fff;
+  background-color: #67b4b0;
+}
+
 .employee-time-info {
   width: 100%;
   display: flex;
@@ -376,4 +389,22 @@
   padding: 1rem;
   margin: 1rem;
   text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: #67b4b0;
 }
