@@ -48,6 +48,9 @@ body {
 /**************************/
 .browsing-section {
   padding: 4rem 7rem 4rem 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .browsing-box {
@@ -124,7 +127,7 @@ body {
 }
 
 .book-intro {
-  padding: 2rem;
+  padding: 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,10 +141,12 @@ body {
 }
 
 .book-intro-content {
+  height: 42rem;
   padding: 2rem;
   font-size: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 0.7rem 0.5rem rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
 }
 
 /**************************/
@@ -244,4 +249,22 @@ body {
   padding: 1rem;
   border-radius: 30px;
   background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: #67b4b0;
 }

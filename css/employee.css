@@ -184,6 +184,7 @@
 
 .book-box {
   width: 100%;
+  max-width: 160rem;
   height: 100rem;
   display: flex;
   border-radius: 12px;
@@ -293,7 +294,7 @@
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
 }
-::-webkit-scrollbar-thumb:window-inactive {
+::-webkit-scrollbar-thumb {
   background: #67b4b0;
 }
 
@@ -354,6 +355,8 @@
 
 .book-item {
   display: flex;
+  width: 100%;
+  max-width: 120rem;
   height: 20rem;
   border-radius: 12px;
   box-shadow: 0 0 0.7rem 0.5rem rgba(0, 0, 0, 0.1);

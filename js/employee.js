@@ -17,11 +17,11 @@ const section_book = document.querySelector(".section-book");
 const section_dessert = document.querySelector(".section-dessert");
 const section_footer = document.querySelector(".footer");
 
-// section_login.style.display = "flex";
-// section_header.style.display = "none";
-// section_book.style.display = "none";
-// section_dessert.style.display = "none";
-// section_footer.style.display = "none";
+section_login.style.display = "flex";
+section_header.style.display = "none";
+section_book.style.display = "none";
+section_dessert.style.display = "none";
+section_footer.style.display = "none";
 
 // 员工id
 let eid = -1;
@@ -32,6 +32,7 @@ login_btn.addEventListener("click", function () {
   let username = $(".username-field").val();
   let password = $(".password-field").val();
 
+  console.log("username:" + username);
   if (username == "") {
     alert("用户名不能为空");
     return;
@@ -42,22 +43,13 @@ login_btn.addEventListener("click", function () {
     return;
   }
 
-  var login_info = {
-    name: username,
-    password: password,
-  };
-
-  // 写完删
-  section_login.style.display = "none";
-  section_header.style.display = "flex";
-  section_book.style.display = "flex";
-  section_dessert.style.display = "none";
-  section_footer.style.display = "flex";
-
   $.ajax({
-    url: "http://localhost:8080//admin/login",
-    type: "post",
-    data: login_info,
+    url: "http://localhost:8080/admin/login",
+    type: "get",
+    data: {
+      name: username,
+      password: password,
+    },
     dataType: "json",
     success: function (resp) {
       console.log(resp);
@@ -68,43 +60,33 @@ login_btn.addEventListener("click", function () {
       section_footer.style.display = "flex";
       if (admin.job == "图书管理员") {
         section_book.style.display = "flex";
-      } else {
-        section_dessert.style.display = "flex";
-      }
-    },
-    error: function () {
-      alert("请求错误");
-    },
-  });
-});
 
-// 图书信息
-let ajaxData = {};
-$.ajax({
-  url: "http://localhost:8080/admin/getAllBook",
-  type: "get",
-  data: ajaxData,
-  dataType: "json",
-  success: function (resp) {
-    console.log(resp);
-    allBook = resp.data;
+        // 图书信息
+        let ajaxData = {};
+        $.ajax({
+          url: "http://localhost:8080/admin/getAllBook",
+          type: "get",
+          dataType: "json",
+          success: function (resp) {
+            console.log(resp);
+            allBook = resp.data;
 
-    const catalogue = document.querySelector(".section-book catalogue");
-    const book_search_box = document.querySelector(".book-manage-box");
+            const catalogue = document.querySelector(".section-book catalogue");
+            const book_search_box = document.querySelector(".book-manage-box");
 
-    let num = 1;
-    allBook.array.forEach((book) => {
-      let newName = "<dd>" + book.name + "<span>></span></dd>";
+            let num = 1;
+            allBook.forEach((book) => {
+              let newName = "<dd>" + book.name + "<span>></span></dd>";
 
-      var random = Math.floor(Math.random() * 3) + 1;
-      let dlClass = ".dl" + random;
-      const dl = document.querySelector(dlClass);
-      dl.appendChild(newName);
+              var random = Math.floor(Math.random() * 3) + 1;
+              let dlClass = ".dl" + random;
+              const dl = document.querySelector(dlClass);
+              dl.appendChild(newName);
 
-      let newBook = document.createElement("div");
-      newBook.classList.add("book-item");
-      newBook.bookId = book.id;
-      newBook.innerHTML = `
+              let newBook = document.createElement("div");
+              newBook.classList.add("book-item");
+              newBook.bookId = book.id;
+              newBook.innerHTML = `
       <img src="${book.imagePath}" alt="" />
       <div class="book-info">
         <p>名称：<input type="text" value="${book.name}" style="width: 12rem;" id="bookName"></input></p>
@@ -125,19 +107,28 @@ $.ajax({
           <button type="submit" id="bookDeleteBtn">删除</button>
         </div>
       </div>`;
-      book_search_box.appendChild(newBook);
+              book_search_box.appendChild(newBook);
 
-      // 点击菜单 显示图书信息
-      newName.addEventListener("click", () => {
-        newBook.scrollIntoView({ behavior: "smooth" });
-      });
+              // 点击菜单 显示图书信息
+              newName.addEventListener("click", () => {
+                newBook.scrollIntoView({ behavior: "smooth" });
+              });
 
-      num++;
-    });
-  },
-  error: function () {
-    // alert("请求错误");
-  },
+              num++;
+            });
+          },
+          error: function () {
+            // alert("请求错误");
+          },
+        });
+      } else {
+        section_dessert.style.display = "flex";
+      }
+    },
+    error: function () {
+      alert("请求错误");
+    },
+  });
 });
 
 // 图书信息
@@ -155,7 +146,7 @@ $.ajax({
     const book_search_box = document.querySelector(".book-manage-box");
 
     let num = 1;
-    allBook.array.forEach((book) => {
+    allBook.forEach((book) => {
       let newName = "<dd>" + book.name + "<span>></span></dd>";
 
       var random = Math.floor(Math.random() * 3) + 1;

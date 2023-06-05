@@ -762,6 +762,6 @@
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: inset006pxrgba(0, 0, 0, 0.5);
 }
-::-webkit-scrollbar-thumb:window-inactive {
+::-webkit-scrollbar-thumb {
   background: #67b4b0;
 }
