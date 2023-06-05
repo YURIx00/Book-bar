@@ -17,7 +17,6 @@ $.ajax({
   success: function (resp) {
     console.log(resp);
     let bookInfo = resp.data[0];
-    console.log(bookInfo);
 
     const bookImg = document.querySelector(".book-img");
     bookImg.src = bookInfo.imagePath;
@@ -55,6 +54,10 @@ $.ajax({
         dataType: "json",
         success: function (resp) {
           console.log(resp);
+
+          addFavorite.value = "已加入书架";
+          addFavorite.classList.add("alreadyAdd");
+          addFavorite.classList.remove("xxbtn");
         },
         error: function () {
           alert("请求错误");
@@ -66,59 +69,90 @@ $.ajax({
       url: "http://localhost:8080/comment/getByBookid",
       type: "get",
       data: {
-        id: bookInfo.id,
+        bookId: bookInfo.id,
       },
       dataType: "json",
       success: function (resp) {
         console.log(resp);
         let allComment = resp.data;
 
-        allComment.array.forEach((element) => {
-          let commentUid = element.uid;
-          let ajaxData = {
-            uid: commentUid,
-          };
-          let user;
-          $.ajax({
-            url: "http://localhost:8080/user/getUserById",
-            type: "get",
-            data: ajaxData,
-            dataType: "json",
-            success: function (resp) {
-              console.log(resp);
-              user = resp.data;
-            },
-            error: function () {
-              // alert("请求错误");
-            },
-          });
+        const commect_box = document.querySelector(".commect-box");
+        removeAllChild(".commect-box");
 
-          const commect_box = document.querySelector(".commect-box");
-
-          removeAllChild(".commect-box");
-
+        allComment.forEach((element) => {
           let newComment = document.createElement("div");
-          newComment.addEventListener("commect");
+          newComment.classList.add("commect");
           newComment.innerHTML = `
           <div class="flex-column">
             <div class="flex align">
-              <img class="head-pic" src="${user.imagePath}" />
+              <img class="head-pic" src="img\\img\\default_profile.webp" />
               <div class="flex-column name-email">
-                <p class="name">${user.name}</p>
-                <p class="email">${"@" + user.name}</p>
+                <p class="name">${element.username}</p>
+                <p class="email">${"@" + element.username}</p>
               </div>
             </div>
             <p class="content">
               ${element.comment}
             </p>
-            <p class="time">${element.commentData}</p>
+            <p class="time">${element.commentDate}</p>
           </div>`;
+
+          commect_box.appendChild(newComment);
         });
-        commect_box.appendChild(newComment);
       },
       error: function () {
         alert("请求错误");
       },
+    });
+
+    // 点击提交按钮 上传评论
+    const submitBtn = document.querySelector(".submitBtn");
+    submitBtn.addEventListener("click", () => {
+      const commentContent = document.querySelector(".writing-content");
+      console.log(commentContent.value);
+      if (commentContent.value == "") {
+        alert("评论不能为空");
+        return;
+      } else {
+        $.ajax({
+          url: "http://localhost:8080/comment/add",
+          type: "post",
+          data: {
+            bookId: bookInfo.id,
+            commentMes: commentContent.value,
+            uid: localStorage.getItem("uid"),
+          },
+          dataType: "json",
+          success: function (resp) {
+            console.log(resp);
+            let comment = resp.data;
+
+            const commect_box = document.querySelector(".commect-box");
+
+            let newComment = document.createElement("div");
+            newComment.classList.add("commect");
+            newComment.innerHTML = `
+          <div class="flex-column">
+            <div class="flex align">
+              <img class="head-pic" src="img\\img\\default_profile.webp" />
+              <div class="flex-column name-email">
+                <p class="name">${comment.username}</p>
+                <p class="email">${"@" + comment.username}</p>
+              </div>
+            </div>
+            <p class="content">
+              ${comment.comment}
+            </p>
+            <p class="time">${comment.commentDate}</p>
+          </div>`;
+
+            commect_box.appendChild(newComment);
+          },
+          error: function () {
+            alert("请求错误");
+          },
+        });
+      }
     });
   },
   error: function () {

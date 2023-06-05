@@ -119,11 +119,28 @@ body {
   gap: 3rem;
 }
 
-.btns input {
+.xxbtn {
   padding: 1rem 2rem;
   font-size: 2rem;
   font-weight: bold;
   border-radius: 10px;
+  transition: all 0.3s 0s ease-in-out;
+  cursor: pointer;
+}
+
+.xxbtn:hover {
+  color: #67b4b0;
+  box-shadow: 0 0 0.7rem 0.5rem rgba(103, 180, 176, 0.45);
+}
+
+.alreadyAdd {
+  background-color: #67b4b0;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .book-intro {
@@ -241,14 +258,42 @@ body {
 }
 
 .writing-img-box ion-icon {
-  font-size: 4rem;
+  padding: 0.3rem;
+  font-size: 3.8rem;
+  cursor: pointer;
+  transition: all 0.3s 0 ease-in-out;
+  border-radius: 50%;
+  transition: all 0.3s 0.05s ease-in-out;
+}
+
+.writing-img-box ion-icon:hover {
+  color: #67b4b0;
+  box-shadow: 0 0 0.7rem 0.5rem rgba(103, 180, 176, 0.45);
 }
 
 .writing-content {
   width: 90rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 30px;
   background-color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.submitBtn {
+  width: 10rem;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  background-color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  transition: all 0.3s 0.05s ease-in-out;
+}
+
+.submitBtn:hover,
+.submitBtn:active {
+  color: #67b4b0;
+  box-shadow: 0 0 0.7rem 0.5rem rgba(103, 180, 176, 0.45);
 }
 
 ::-webkit-scrollbar {

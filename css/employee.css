@@ -277,7 +277,7 @@
 .book-manage {
   width: 100%;
   min-height: 60rem;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -347,10 +347,6 @@
   gap: 3rem;
   overflow: scroll;
   transition: all 0.3s 0.1s ease-in-out;
-}
-
-.book-manage-box::-webkit-scrollbar {
-  width: 0;
 }
 
 .book-item {

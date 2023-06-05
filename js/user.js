@@ -173,15 +173,11 @@ $.ajax({
 
       // 点击图书，进入浏览界面
       newBook.addEventListener("click", () => {
-        window.open("`book.html?id=${book.id}`", "_blank");
+        localStorage.setItem("bookName", book.name);
+        window.location.href = `book.html`;
       });
 
       num++;
-    });
-
-    const allBookElement = document.querySelectorAll(".book-slide");
-    allBookElement.forEach((bookElement) => {
-      window.location.href = `book.html?bookName=${bookElement.name}`;
     });
   },
   error: function () {
