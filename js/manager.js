@@ -84,6 +84,8 @@ $.ajax({
         joinDate: adminStartTime.value,
       };
 
+      console.log(JSON.stringify(changeInfo));
+
       $.ajax({
         url: "http://localhost:8080/admin/updateAdmin",
         type: "post",
