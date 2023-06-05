@@ -13,6 +13,13 @@ var swiper = new Swiper(".swiper-container", {
   loop: false,
 });
 
+function removeAllChild(nodeName) {
+  let node = document.querySelector(nodeName);
+  while (node.hasChildNodes()) {
+    node.removeChild(node.firstChild);
+  }
+}
+
 $.ajax({
   url: "http://localhost:8080/admin/getAllBook",
   type: "get",
@@ -21,30 +28,28 @@ $.ajax({
     console.log(resp);
     allBook = resp.data;
 
-    const catalogue = document.querySelector(".book-browsing-box catalogue");
     const book_search_box = document.querySelector(".book-search-box");
+    removeAllChild(".book-search-box");
+    let newTitle = document.createElement("div");
+    newTitle.classList.add("book-search-title");
+    newTitle.innerHTML =
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+    book_search_box.appendChild(newTitle);
 
     let num = 1;
-    allBook.array.forEach((book) => {
-      let newChild = "<dd>" + book.name + "<span>></span></dd>";
+    allBook.forEach((book) => {
+      console.log(book);
+      let newChild = document.createElement("dd");
+      newChild.innerHTML = book.name + "<span>></span>";
 
       var random = Math.floor(Math.random() * 3) + 1;
       let dlClass = ".dl" + random;
       const dl = document.querySelector(dlClass);
       dl.appendChild(newChild);
 
-      let newName = `<div class="book-item">
-      <img src="img\\img\reading wuman.jpg" />
-      <div class="author-box">
-        <img src="img\\img\\default_profile.webp" />
-        <p class="author-name">${book.name}</p>
-        <span>-10.3</span>
-        <p>万字</p>
-      </div>
-      </div>`;
-      catalogue.appendChild(newName);
-
-      let newBook = `<div class="book-slide" val="${book.id}">
+      let newBook = document.createElement("div");
+      newBook.val = book.id;
+      newBook.innerHTML = `
       <div class="testimonialBox">
         <img
           src="${book.imagePath}"
@@ -63,22 +68,21 @@ $.ajax({
           </div>
         </div>
       </div>
-    </div>`;
+    `;
       book_search_box.appendChild(newBook);
+      newBook.addEventListener("click", () => {
+        localStorage.setItem("bookName", book.name);
+        window.location.href = `book.html`;
+      });
 
       // 点击菜单 显示甜点信息
-      newName.addEventListener("click", () => {
+      newChild.addEventListener("click", () => {
         newBook.scrollIntoView({ behavior: "smooth" });
       });
 
       // 点击图书，进入浏览界面
 
       num++;
-    });
-
-    const allBookElement = document.querySelectorAll(".book-slide");
-    allBookElement.forEach((bookElement) => {
-      window.location.href = `book.html?bookName=${bookElement.name}`;
     });
   },
   error: function () {

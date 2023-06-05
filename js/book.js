@@ -1,9 +1,9 @@
+console.log(localStorage.getItem("bookName"));
+
 $.ajax({
   url: "http://localhost:8080/admin/getBooksByName",
   type: "get",
-  data: {
-    bookName: bookName,
-  },
+  data: localStorage.getItem("bookName"),
   dataType: "json",
   success: function (resp) {
     console.log(resp);
@@ -48,55 +48,55 @@ $.ajax({
   },
 });
 
-$.ajax({
-  url: "http://localhost:8080/comment/getByBookid",
-  type: "get",
-  data: sendComment,
-  dataType: "json",
-  success: function (resp) {
-    console.log(resp);
-    let allComment = resp.data;
+// $.ajax({
+//   url: "http://localhost:8080/comment/getByBookid",
+//   type: "get",
+//   data: sendComment,
+//   dataType: "json",
+//   success: function (resp) {
+//     console.log(resp);
+//     let allComment = resp.data;
 
-    allComment.array.forEach((element) => {
-      let commentUid = element.uid;
-      let ajaxData = {
-        uid: commentUid,
-      };
-      let user;
-      $.ajax({
-        url: "http://localhost:8080/user/getUserById",
-        type: "get",
-        data: ajaxData,
-        dataType: "json",
-        success: function (resp) {
-          console.log(resp);
-          user = resp.data;
-        },
-        error: function () {
-          // alert("请求错误");
-        },
-      });
+//     allComment.array.forEach((element) => {
+//       let commentUid = element.uid;
+//       let ajaxData = {
+//         uid: commentUid,
+//       };
+//       let user;
+//       $.ajax({
+//         url: "http://localhost:8080/user/getUserById",
+//         type: "get",
+//         data: ajaxData,
+//         dataType: "json",
+//         success: function (resp) {
+//           console.log(resp);
+//           user = resp.data;
+//         },
+//         error: function () {
+//           // alert("请求错误");
+//         },
+//       });
 
-      const commect_box = document.querySelector(".commect-box");
-      let newComment = `<div class="commect">
-      <div class="flex-column">
-        <div class="flex align">
-          <img class="head-pic" src="${user.imagePath}" />
-          <div class="flex-column name-email">
-            <p class="name">${user.name}</p>
-            <p class="email">${"@" + user.name}</p>
-          </div>
-        </div>
-        <p class="content">
-          ${element.comment}
-        </p>
-        <p class="time">${element.commentData}</p>
-      </div>
-    </div>`;
-    });
-    commect_box.appendChild(newComment);
-  },
-  error: function () {
-    alert("请求错误");
-  },
-});
+//       const commect_box = document.querySelector(".commect-box");
+//       let newComment = `<div class="commect">
+//       <div class="flex-column">
+//         <div class="flex align">
+//           <img class="head-pic" src="${user.imagePath}" />
+//           <div class="flex-column name-email">
+//             <p class="name">${user.name}</p>
+//             <p class="email">${"@" + user.name}</p>
+//           </div>
+//         </div>
+//         <p class="content">
+//           ${element.comment}
+//         </p>
+//         <p class="time">${element.commentData}</p>
+//       </div>
+//     </div>`;
+//     });
+//     commect_box.appendChild(newComment);
+//   },
+//   error: function () {
+//     alert("请求错误");
+//   },
+// });

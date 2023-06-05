@@ -255,6 +255,7 @@ body {
   grid-column-end: 4;
   background-color: #67b4b0;
   border-radius: 10px;
+  height: 6rem;
 }
 
 .book-slide {

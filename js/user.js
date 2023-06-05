@@ -8,7 +8,8 @@ for (let i = 0; i < navbarItem.length; i++) {
   });
 }
 
-function removeAllChild(node) {
+function removeAllChild(nodeName) {
+  let node = document.querySelector(nodeName);
   while (node.hasChildNodes()) {
     node.removeChild(node.firstChild);
   }
@@ -29,14 +30,8 @@ $.ajax({
     user = resp.data;
 
     // 头像
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "/my/image/name.png", true);
-    xhr.responseType = "arraybuffer";
-
-    var imageType = xhr.getResponseHeader("Content-Type");
-    var blob = new Blob([xhr.response], { type: imageType });
-    var imageUrl = (window.URL || window.webkitURL).createObjectURL(blob);
-    $(".home-info img").attr("src", imageUrl);
+    $(".home-info img").attr("src", `${user.imagePath}`);
+    console.log(user.imagePath);
 
     // 个人信息
     const username = document.querySelector(".home-content h1");
@@ -51,13 +46,13 @@ $.ajax({
     btn.innerHTML = `余额：${user.balance}元`;
 
     // 称号
-    let VIP = ["尊贵黄金会员", "尊贵铂金会员", "尊贵钻石会员"];
+    let VIP = ["", "尊贵黄金会员", "尊贵铂金会员", "尊贵钻石会员"];
     let designation = [];
     if (user.vipCLass != 0) {
-      designation.insert(VIP[user.vipCLass - 1]);
+      designation.push(VIP[parseInt(user.vipClass) - 1]);
     }
-    designation.insert("年度最佳读者");
-    designation.insert("茶室小点吞噬者");
+    designation.push("年度最佳读者");
+    designation.push("茶室小点吞噬者");
 
     var typed = new Typed(".multiple-text", {
       strings: designation,
@@ -91,7 +86,7 @@ toVip.addEventListener("click", () => {
 
 // 茶室小点
 $.ajax({
-  url: "http://localhost:8080/home/getFavoriteBooksByUid",
+  url: "http://localhost:8080/admin/getAllDessert",
   type: "get",
   dataType: "json",
   success: function (resp) {
@@ -99,18 +94,46 @@ $.ajax({
     let allDessert = resp.data;
     const catalogue = document.querySelector(".dessert-contaner catalogue");
     const dessert_info = document.querySelector(".dessert-info");
-    removeAllChild(dessert_info);
+    removeAllChild(".dessert-info");
     const dessert_totPrice = document.querySelector(".dessert-shopping h2");
     const settlementBtn = document.querySelector(".shopping-add");
 
     let num = 1;
-    allDessert.array.forEach((dessert) => {
-      let newChild = "<dd>" + dessert.name + "<span>></span></dd>";
+    allDessert.forEach((dessert) => {
+      console.log("dessert: " + num);
+      let newChild = document.createElement("dd");
+      newChild.innerHTML = dessert.name + "<span>></span>";
 
       var random = Math.floor(Math.random() * 3) + 1;
       let dlClass = ".dl" + random;
       const dl = document.querySelector(dlClass);
       dl.appendChild(newChild);
+
+      // var xmlhttp;
+      // xmlhttp = new XMLHttpRequest();
+      // xmlhttp.open("GET", "自己的函数地址", true);
+      // xmlhttp.responseType = "blob";
+      // xmlhttp.onload = function () {
+      //   console.log(this);
+      //   if (this.status == 200) {
+      //     var blob = this.response;
+      //     //该方式用于将图片放置在已经存在的元素中，本人放在画布里面定义的img=image()中
+      //     var reader = new FileReader();
+      //     reader.readAsDataURL(blob); // dataurl用于转换为图片的地址
+      //     reader.onload = function (e) {
+      //       console.log(e);
+      //       img.src = e.target.result; // 图片地址示例
+      //     };
+      //     //下面方式用于创建新的元素显示
+      //     // var img = document.createElement("img");
+      //     // img.onload = function(e) {
+      //     //     window.URL.revokeObjectURL(img.src);
+      //     // };
+      //     // img.src = window.URL.createObjectURL(blob);
+      //     // document.body.appendChild(img);
+      //   }
+      // };
+      // xmlhttp.send();
 
       let newDessert = document.createElement("div");
       newDessert.classList.add("dessert-item");
@@ -145,19 +168,18 @@ $.ajax({
   },
 });
 
+个人书架;
 $.ajax({
   url: "http://localhost:8080/home/getFavoriteBooksByUid",
   type: "get",
-  data: {
-    id: localStorage.getItem("uid"),
-  },
+  data: localStorage.getItem("uid"),
   dataType: "json",
   success: function (resp) {
     console.log(resp);
     allBook = resp.data;
 
     const book_item_box = document.querySelector(".book_item_box");
-    removeAllChild(book_item_box);
+    removeAllChild(".book_item_box");
 
     let num = 1;
     allBook.array.forEach((book) => {

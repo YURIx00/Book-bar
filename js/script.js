@@ -124,7 +124,7 @@ function clickSignupBtn() {
       success: function (resp) {
         console.log("注册成功");
         console.log(resp);
-        localStorage.setItem("uid", resp.uid);
+        localStorage.setItem("uid", resp.data);
 
         window.location.href = "user.html";
       },
@@ -142,7 +142,7 @@ function clickSignupBtn() {
       success: function (resp) {
         console.log("登录成功");
         console.log(resp);
-        localStorage.setItem("uid", resp.uid);
+        localStorage.setItem("uid", resp.data);
 
         window.location.href = "user.html";
       },
