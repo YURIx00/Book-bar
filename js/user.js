@@ -49,7 +49,7 @@ $.ajax({
     let VIP = ["", "尊贵黄金会员", "尊贵铂金会员", "尊贵钻石会员"];
     let designation = [];
     if (user.vipCLass != 0) {
-      designation.push(VIP[parseInt(user.vipClass) - 1]);
+      designation.push(VIP[parseInt(user.vipClass)]);
     }
     designation.push("年度最佳读者");
     designation.push("茶室小点吞噬者");

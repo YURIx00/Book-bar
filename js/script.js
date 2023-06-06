@@ -114,6 +114,8 @@ function clickSignupBtn() {
     password: password,
   };
 
+  console.log(login_info);
+
   if (dir == 1) {
     // 注册
     $.ajax({

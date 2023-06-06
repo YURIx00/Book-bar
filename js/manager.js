@@ -214,7 +214,7 @@ getAdminFinanceBtn.addEventListener("click", function () {
     dataType: "json",
     success: function (resp) {
       console.log(resp);
-      allFinance = resp.data.financeInfoList;
+      allFinance = resp.data.adminBillList;
       financeTotal.value = resp.data.totalAmount + "元";
 
       removeAllChild(".finance-items");
@@ -229,7 +229,7 @@ getAdminFinanceBtn.addEventListener("click", function () {
           <span>员工：${finance.adminName}</span>
           <span>月薪：${finance.salary}</span>
           <span>奖金：${finance.bonus}</span>
-          <span id="finance-item-last">薪水支出：${finance.total}</span>`;
+          <span id="finance-item-last">薪水支出：${finance.totalAmount}</span>`;
 
           financeBox.appendChild(newFinance);
         }
