@@ -136,14 +136,21 @@ $.ajax({
 
     // 点击结算按钮清空金额
     settlementBtn.addEventListener("click", () => {
+      console.log(
+        JSON.stringify({
+          dessert: shoppingCart,
+          uid: localStorage.getItem("uid"),
+        })
+      );
       $.ajax({
         url: "http://localhost:8080/dessert/buyDessert",
         type: "post",
-        data: {
+        contentType: "application/json;charset=utf-8", //设置请求头信息
+        dataType: "json",
+        data: JSON.stringify({
           dessert: shoppingCart,
           uid: localStorage.getItem("uid"),
-        },
-        dataType: "json",
+        }),
         success: function (resp) {
           console.log(resp);
           alert(resp.data);
