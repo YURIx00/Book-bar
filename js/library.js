@@ -32,8 +32,7 @@ $.ajax({
     removeAllChild(".book-search-box");
     let newTitle = document.createElement("div");
     newTitle.classList.add("book-search-title");
-    newTitle.innerHTML =
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit.";
+    newTitle.innerHTML = "书架";
     book_search_box.appendChild(newTitle);
 
     let num = 1;
@@ -62,7 +61,7 @@ $.ajax({
           </p>
           <div class="details">
             <div class="imgBx">
-              <img src="${book.authorImagePath}"/>
+              <img src="img\\img\\head img.jpg"/>
             </div>
             <h3>Call me Phoenix<br /><span>Creative Designer</span></h3>
           </div>

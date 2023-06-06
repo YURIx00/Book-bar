@@ -205,7 +205,7 @@ getAllFinanceBtn.addEventListener("click", function () {
 
 getAdminFinanceBtn.addEventListener("click", function () {
   $.ajax({
-    url: "http://localhost:8080/admin/getAllFinanceInfoByDateRange",
+    url: "http://localhost:8080/admin/getAdminBillByDateRang",
     type: "get",
     data: {
       startDate: financeStartTime.value,

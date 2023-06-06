@@ -84,6 +84,65 @@ login_btn.addEventListener("click", function () {
             const book_search_box = document.querySelector(".book-manage-box");
             removeAllChild(".book-manage-box");
 
+            const createBook = document.querySelector(".createBook");
+            createBook.addEventListener("click", () => {
+              let newChild = document.createElement("dd");
+              newChild.innerHTML = "新建图书" + "<span>></span>";
+
+              let dlClass = ".dl1";
+              const dl = document.querySelector(dlClass);
+              dl.insertBefore(newChild, dl.childNodes[2]);
+
+              let newBook = document.createElement("div");
+              newBook.classList.add("book-item");
+              newBook.bookId = book.id;
+              newBook.innerHTML = `<img src="img\\img\\book-cover.jpg" alt="" />`;
+
+              let newBookInfo = document.createElement("div");
+              newBookInfo.classList.add("book-info");
+              newBookInfo.innerHTML = `
+              <p>名称：<input type="text" value="书名" style="width: 12rem;" id="bookName"></input></p>
+              <p>作者：<input type="text" value="作者名" style="width: 10rem;" id="bookAuthor"></input></p>
+              <p>电子版价格：<input type="number" value="电子书价格" style="width: 9rem;" id="bookEprice"></input>元</p>
+              <p>实体书价格：<input type="number" value="实体书价格" style="width: 9rem;" id="bookPrice">元</input></p>
+              <p class="book-intro">
+                简介：<input type="text" value="简介"
+                style="width: 90%" id="bookIntro"></input
+                >
+              </p>
+              <p>位置：<input type="text" value="位置" style="width: 12rem;" id="bookLocation"></input></p>
+              <p>数量：<input type="number" value="库存量" style="width: 12rem;" id="bookStorage"></input>本</p>`;
+
+              let bookChangeBtn = document.createElement("div");
+              bookChangeBtn.classList.add("btn-box");
+              bookChangeBtn.innerHTML = `<button type="submit" id="bookChangeBtn">保存修改</button>`;
+              newBookInfo.appendChild(bookChangeBtn);
+
+              let bookDeleteBtn = document.createElement("div");
+              bookDeleteBtn.classList.add("btn-box");
+              bookDeleteBtn.innerHTML = `<button type="submit" id="bookDeleteBtn">删除</button>`;
+              newBookInfo.appendChild(bookDeleteBtn);
+
+              newBook.appendChild(newBookInfo);
+              book_search_box.insertBefore(newBook, book_search_box.firstChild);
+
+              // 点击菜单 显示图书信息
+              newChild.addEventListener("click", () => {
+                newBook.scrollIntoView({ behavior: "smooth" });
+              });
+
+              // 点击保存修改
+              bookChangeBtn.addEventListener("click", () => {
+                alert("保存成功");
+              });
+
+              // 点击删除按钮
+              bookDeleteBtn.addEventListener("click", () => {
+                newChild.style.display = "none";
+                newBook.style.display = "none";
+              });
+            });
+
             let num = 1;
             allBook.forEach((book) => {
               console.log("book:" + num);
@@ -134,10 +193,15 @@ login_btn.addEventListener("click", function () {
               });
 
               // 点击保存修改
-              bookChangeBtn.addEventListener("click", () => {});
+              bookChangeBtn.addEventListener("click", () => {
+                alert("保存成功");
+              });
 
               // 点击删除按钮
-              bookDeleteBtn.addEventListener("click", () => {});
+              bookDeleteBtn.addEventListener("click", () => {
+                newChild.style.display = "none";
+                newBook.style.display = "none";
+              });
               num++;
             });
           },

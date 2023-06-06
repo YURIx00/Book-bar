@@ -84,6 +84,8 @@ toVip.addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
+let shoppingCart = [];
+
 // 茶室小点
 $.ajax({
   url: "http://localhost:8080/admin/getAllDessert",
@@ -111,7 +113,7 @@ $.ajax({
 
       let newDessert = document.createElement("div");
       newDessert.classList.add("dessert-item");
-      newDessert.innerHTML = `<img src="${dessert.imagePath}" /> <div class="dessert-xxx> <p class="dessert-price">现价：<strong>${dessert.cost}元</strong><span>${dessert.price}元</span></p><div class="dessert-sale-amout">库存${dessert.storage}份</div></div>`;
+      newDessert.innerHTML = `<img src="${dessert.imagePath}" /> <div class="dessert-xxx"><p class="dessert-showName">${dessert.name}</p> <p class="dessert-price">现价：<strong>${dessert.cost}元</strong><span>${dessert.price}元</span></p><div class="dessert-sale-amout">库存${dessert.storage}份</div></div>`;
 
       // 点击加号总价格增加
       let plusBtn = document.createElement("ion-icon");
@@ -120,6 +122,7 @@ $.ajax({
       plusBtn.addEventListener("click", () => {
         dessert_totPrice.val = parseInt(dessert_totPrice.val) + dessert.cost;
         dessert_totPrice.innerHTML = `${dessert_totPrice.val}￥`;
+        shoppingCart.push(dessert.id);
       });
       dessert_info.appendChild(newDessert);
 
@@ -133,8 +136,26 @@ $.ajax({
 
     // 点击结算按钮清空金额
     settlementBtn.addEventListener("click", () => {
+      $.ajax({
+        url: "http://localhost:8080/dessert/buyDessert",
+        type: "post",
+        data: {
+          dessert: shoppingCart,
+          uid: localStorage.getItem("uid"),
+        },
+        dataType: "json",
+        success: function (resp) {
+          console.log(resp);
+          alert(resp.data);
+        },
+        error: function () {
+          alert("请求错误");
+        },
+      });
+
       dessert_totPrice.val = 0;
       dessert_totPrice.innerHTML = `${dessert_totPrice.val}￥`;
+      shoppingCart = [];
     });
   },
   error: function () {

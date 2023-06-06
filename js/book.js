@@ -43,6 +43,9 @@ $.ajax({
     bookIntrodation.innerHTML = `${bookInfo.briefIntroduction}`;
 
     const addFavorite = document.querySelector(".addFavorite");
+    const buyBook = document.querySelector(".buyBook");
+    const buyEbook = document.querySelector(".buyEbook");
+
     addFavorite.addEventListener("click", () => {
       $.ajax({
         url: "http://localhost:8080/home/addFavoriteBook",
@@ -58,6 +61,48 @@ $.ajax({
           addFavorite.value = "已加入书架";
           addFavorite.classList.add("alreadyAdd");
           addFavorite.classList.remove("xxbtn");
+        },
+        error: function () {
+          alert("请求错误");
+        },
+      });
+    });
+
+    buyBook.addEventListener("click", () => {
+      $.ajax({
+        url: "http://localhost:8080/buyBook",
+        type: "post",
+        data: {
+          bookId: bookInfo.id,
+          ebook_flag: 0,
+          nums: 1,
+          uid: localStorage.getItem("uid"),
+        },
+        dataType: "json",
+        success: function (resp) {
+          console.log(resp);
+          alert("购买实体书成功");
+        },
+        error: function () {
+          alert("请求错误");
+        },
+      });
+    });
+
+    buyEbook.addEventListener("click", () => {
+      $.ajax({
+        url: "http://localhost:8080/buyBook",
+        type: "post",
+        data: {
+          bookId: bookInfo.id,
+          ebook_flag: 1,
+          nums: 1,
+          uid: localStorage.getItem("uid"),
+        },
+        dataType: "json",
+        success: function (resp) {
+          console.log(resp);
+          alert("购买电子书成功");
         },
         error: function () {
           alert("请求错误");
